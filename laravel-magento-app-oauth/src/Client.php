@@ -2,7 +2,8 @@
 /**
  * Client.php
  *
- * Author: kevin
+ * Author: topster21
+ * Github: @see github.com/topster21/lmao
  * Date: 2/18/17
  * Time: 5:24 PM
  *
@@ -39,6 +40,13 @@ class Client
      */
     public $callbackUrl;
 
+    /*
+     * The admin slug. Is not the same for every language, you can change that in the .env file with LMAO_ADMIN_SLUG
+     * For instance: if your url for the admin page is : yourmagentoshop.nl/beheer/ you change that to beheer.
+     * In the .env file: LMAO_ADMIN_SLUG=beheer
+     */
+    public $adminSlug;
+
 
     private $oauthController;
 
@@ -54,19 +62,21 @@ class Client
          */
 
         $errormsg = "Please make sure these keys and values are present in your .env file: \n
-    \nMAGENTO_OAUTH_KEY=\nMAGENTO_OAUTH_SECRET=\nMAGENTO_OAUTH_URL=";
+    \nLMAO_KEY=\nLMAO_SECRET=\nLMAO_URL=";
 
-        if (env("MAGENTO_OAUTH_KEY") == null || env("MAGENTO_OAUTH_KEY") == "")
-            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'MAGENTO_OAUTH_KEY' variable in your .env file.");
-        if (env("MAGENTO_OAUTH_SECRET") == null || env("MAGENTO_OAUTH_SECRET") == "")
-            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'MAGENTO_OAUTH_SECRET' variable in your .env file.");
-        if (env("MAGENTO_OAUTH_URL") == null || env("MAGENTO_OAUTH_URL") == "")
-            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'MAGENTO_OAUTH_URL' variable in your .env file.");
+        if (env("LMAO_KEY") == null || env("LMAO_KEY") == "")
+            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'LMAO_KEY' variable in your .env file.");
+        if (env("LMAO_SECRET") == null || env("LMAO_SECRET") == "")
+            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'LMAO_SECRET' variable in your .env file.");
+        if (env("LMAO_URL") == null || env("LMAO_URL") == "")
+            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'LMAO_URL' variable in your .env file.");
 
 
-        $this->consumerKey = env("MAGENTO_OAUTH_KEY", "SET THIS VALUE IN YOUR .ENV FILE");
-        $this->consumerSecret = env("MAGENTO_OAUTH_SECRET", "SET THIS VALUE IN YOUR .ENV FILE");
-        $this->magentoUrl = env("MAGENTO_OAUTH_URL", "SET THIS VALUE IN YOUR .ENV FILE");
+        $this->consumerKey = env("LMAO_KEY", "SET THIS VALUE IN YOUR .ENV FILE");
+        $this->consumerSecret = env("LMAO_SECRET", "SET THIS VALUE IN YOUR .ENV FILE");
+        $this->magentoUrl = env("LMAO_URL", "SET THIS VALUE IN YOUR .ENV FILE");
+        $this->adminSlug = env("LMAO_ADMIN_SLUG", 'admin');
+
         $this->callbackUrl = URL::to('/') . "/lmao/callback";
 
         $this->oauthController = new OAuthController($this);

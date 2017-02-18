@@ -3,9 +3,15 @@
  *
  * MagentoOAuthController.php
  *
- * Author: kevin
+ * Author: topster21
+ * Github: @see github.com/topster21/lmao
  * Date: 17-2-17
  * Time: 18:09
+ *
+ * Massive props to:
+ *      Bogdan Constantinescu <BogCon@yahoo.com>
+ * for his example on StackOverflow: http://stackoverflow.com/a/27761671
+ * It was really helpful with the signature shenanigans!
  */
 
 namespace Topster21\LMAO;

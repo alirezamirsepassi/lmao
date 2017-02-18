@@ -2,7 +2,8 @@
 /**
  * LMAO.php
  *
- * Author: kevin
+ * Author: topster21
+ * Github: @see github.com/topster21/lmao
  * Date: 2/18/17
  * Time: 5:00 PM
  *
