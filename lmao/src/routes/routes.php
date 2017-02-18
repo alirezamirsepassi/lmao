@@ -14,10 +14,6 @@
 use Illuminate\Support\Facades\Input;
 use Topster21\LMAO\Client;
 
-Route::get('/lmao', function() {
-    return "AYYmd";
-});
-
 Route::get('/lmao/initiate', function() {
     $client = new Client();
 
