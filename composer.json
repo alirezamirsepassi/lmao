@@ -1,0 +1,13 @@
+{
+    "name": "topster21/lmao",
+    "description": "A Laravel Package for Magento OAuth token retrieval, and admin authentication.",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "authors": [
+        {
+            "name": "Kevin",
+            "email": "kevin@elgentos.nl"
+        }
+    ]
+}
