@@ -25,7 +25,7 @@ Route::get('/lmao/initiate', function() {
 
     session(['lmao_secret' => $oauth_data['oauth_token_secret']]);
 
-    return redirect($client->magentoUrl . '/beheer/oauth_authorize?oauth_token=' . $oauth_data['oauth_token']);
+    return redirect($client->magentoUrl . '/'. $client->adminSlug . '/oauth_authorize?oauth_token=' . $oauth_data['oauth_token']);
 })->middleware('web');
 
 

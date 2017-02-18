@@ -27,7 +27,7 @@ use GuzzleHttp\Client;
  * For more information on the Magento-specific parts:
  * http://devdocs.magento.com/guides/m1x/api/rest/authentication/oauth_authentication.html
  */
-class OAuthController
+class APIController
 {
     /*
      * Consumer Key

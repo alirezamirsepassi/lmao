@@ -79,7 +79,7 @@ class Client
 
         $this->callbackUrl = URL::to('/') . "/lmao/callback";
 
-        $this->oauthController = new OAuthController($this);
+        $this->oauthController = new APIController($this);
     }
 
     public function serveLoginPage()
