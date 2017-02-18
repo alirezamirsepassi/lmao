@@ -1,5 +1,5 @@
 # lmao
-Laravel Magento Application OAuth package
+Laravel Magento Admin OAuth package
 
 ## What is this even?
 This is my Laravel package. I created it because I got really frustrated at Magento OAuthentication for Magento 1 webshops.
