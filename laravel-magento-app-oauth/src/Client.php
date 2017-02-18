@@ -14,6 +14,7 @@ namespace Topster21\LMAO;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\URL;
+use Symfony\Component\Routing\Exception\InvalidParameterException;
 
 class Client
 {
@@ -47,12 +48,21 @@ class Client
      */
     public function __construct()
     {
-        if (env("MAGENTO_OAUTH_KEY") == null)
-            echo "Please set the 'MAGENTO_OAUTH_KEY' variable in your .env file.";
-        if (env("MAGENTO_OAUTH_SECRET") == null)
-            echo "Please set the 'MAGENTO_OAUTH_SECRET' variable in your .env file.";
-        if (env("MAGENTO_OAUTH_URL") == null)
-            echo "Please set the 'MAGENTO_OAUTH_URL' variable in your .env file.";
+        /*
+         * Some error message stuff.
+         * The user should know when something is not configured correctly eh?
+         */
+
+        $errormsg = "Please make sure these keys and values are present in your .env file: \n
+    \nMAGENTO_OAUTH_KEY=\nMAGENTO_OAUTH_SECRET=\nMAGENTO_OAUTH_URL=";
+
+        if (env("MAGENTO_OAUTH_KEY") == null || env("MAGENTO_OAUTH_KEY") == "")
+            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'MAGENTO_OAUTH_KEY' variable in your .env file.");
+        if (env("MAGENTO_OAUTH_SECRET") == null || env("MAGENTO_OAUTH_SECRET") == "")
+            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'MAGENTO_OAUTH_SECRET' variable in your .env file.");
+        if (env("MAGENTO_OAUTH_URL") == null || env("MAGENTO_OAUTH_URL") == "")
+            throw new InvalidParameterException($errormsg . "\n\nPlease set the 'MAGENTO_OAUTH_URL' variable in your .env file.");
+
 
         $this->consumerKey = env("MAGENTO_OAUTH_KEY", "SET THIS VALUE IN YOUR .ENV FILE");
         $this->consumerSecret = env("MAGENTO_OAUTH_SECRET", "SET THIS VALUE IN YOUR .ENV FILE");
@@ -62,7 +72,8 @@ class Client
         $this->oauthController = new OAuthController($this);
     }
 
-    public function serveLoginPage() {
+    public function serveLoginPage()
+    {
 
         if (session('lmao_token') != null && session('lmao_secret') != null && session('lmao_status') == Status::HAS_ACCESSTOKEN) {
             // We are already logged in!
@@ -84,10 +95,12 @@ class Client
         return $oauth_data;
     }
 
-    public function completeAuthentication($token, $verifier, $secret) {
+    public function completeAuthentication($token, $verifier, $secret)
+    {
 
         if ($token == nullOrEmptyString() || $verifier == nullOrEmptyString() ||
-             $secret == nullOrEmptyString() || session('lmao_status') != Status::HAS_REQUESTTOKEN) {
+            $secret == nullOrEmptyString() || session('lmao_status') != Status::HAS_REQUESTTOKEN
+        ) {
 
             session(['lmao_status' => Status::LOGGED_OUT]);
             return redirect('/lmao/initialise');
