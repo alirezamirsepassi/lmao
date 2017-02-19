@@ -2,9 +2,10 @@
 Laravel Magento Admin OAuth package
 
 ## What is this even?
-This is my Laravel package. I created it because I got really frustrated at Magento OAuthentication for Magento 1 webshops.
-The other OAuth packages did not fit my use-case, and after this I never want to bother with it again. So I made this package, where you can just
-add it using composer and be done with it.
+This is my Laravel package. 
+My use-case was to authenticate Magento webshop administrators using my application.
+I created this because I got really frustrated at Magento OAuthentication and the other OAuth packages did not fit my use-case.
+Also: I never need to do this twice, just pull the package using composer, create middleware, add the lines in there and I'm done!
 
 
 ## So how do i use this?
@@ -56,7 +57,8 @@ Grabs the token secret graciously given to us by the Magento application. It pro
 
 ### Example of usage
 I have created a [middleware](https://laravel.com/docs/5.4/middleware#defining-middleware) class in my application. 
-It puts the resulting token, secret and status
+It looks for the right status in the users' session. If it does not find it, it'll redirect to an authentication route in lmao.
+
 
 ```php
 public function handle($request, Closure $next)
