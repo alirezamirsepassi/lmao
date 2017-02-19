@@ -13,8 +13,20 @@ add it using composer and be done with it.
 ```
 composer require "topster21/lmao"
 ```
+
+Also: add these in your **config/app.php**
+#### Providers:
+
+`Topster21\LMAO\LMAOServiceProvider::class,`
+
+
+#### Aliases:
+
+`'LMAO' => Topster21\LMAO\Facades\LMAO::class,`
+
+
 ### Application specifics
-Send the user to `/lmao/initiate` to start the log-in process.
+Send the user to **/lmao/initiate** to start the log-in process.
 When authenticated, lmao will attempt to redirect the user to the original request page. If that fails the user will land on the homepage.
 This is best used with Laravel Middleware, which is what it was designed for in the first place.
 
