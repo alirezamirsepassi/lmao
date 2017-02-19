@@ -4,10 +4,15 @@
     "require": {
         "guzzlehttp/guzzle": "^6.2"
     },
+    "autoload": {
+        "psr-4": {
+            "Topster21\\LMAO\\" : "src"
+        }
+    }
     "authors": [
         {
             "name": "Kevin",
-            "email": "kevin@elgentos.nl"
+            "email": "topster21@gmail.com"
         }
     ]
 }
