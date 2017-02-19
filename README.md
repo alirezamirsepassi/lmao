@@ -61,5 +61,5 @@ public function handle($request, Closure $next)
 ```
 
 
-## Any snakes in the grass?
-Yes. It currently does not catch deny-callbacks from the magento application. You'll need to catch those yourself.
+## P.S.
+It currently does not catch deny-callbacks from the magento application. You'll need to catch those yourself, until I implement that (if)
