@@ -45,7 +45,8 @@ Grabs the token secret graciously given to us by the Magento application. It pro
 
 ### Example of usage
 I have created a [middleware](https://laravel.com/docs/5.4/middleware#defining-middleware) class in my application. 
-It puts the resulting token, secret and status
+It looks for the right status in the users' session. If it does not find it, it'll redirect to an authentication route in lmao.
+
 
 ```php
 public function handle($request, Closure $next)
