@@ -17,4 +17,5 @@ abstract class Status
     const LOGGED_OUT = 0;
     const HAS_REQUESTTOKEN = 1;
     const HAS_ACCESSTOKEN = 2;
+    const LOGGED_IN = 3;
 }

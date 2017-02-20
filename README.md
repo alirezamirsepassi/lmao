@@ -63,7 +63,7 @@ It looks for the right status in the users' session. If it does not find it, it'
 ```php
 public function handle($request, Closure $next)
 {
-    if (session()->has('lmao_status') && session('lmao_status') == Status::HAS_ACCESSTOKEN)
+    if (session()->has('lmao_status') && session('lmao_status') == Status::LOGGED_IN)
          // This glorious individual is allowed in! Praise
          return $next($request);
          
@@ -73,5 +73,16 @@ public function handle($request, Closure $next)
 ```
 
 
-## P.S.
-It currently does not catch deny-callbacks from the magento application. You'll need to catch those yourself.
+## Optional
+This package can handle a 'rejected'-callback from the Magento webshop. It can also handle a logout procedure.
+
+If you want to use these, link to these routes:
+
+#### Refused Callback URL
+
+In your Magento webshop admin panel: `/lmao/refused`
+
+
+#### Logout
+
+In your html `/lmao/logout`

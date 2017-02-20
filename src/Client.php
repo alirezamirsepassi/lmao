@@ -123,7 +123,5 @@ class Client
         session(['lmao_token' => $oauth_complete['oauth_token']]);
 
         session(['lmao_secret' => $oauth_complete['oauth_token_secret']]);
-
-
     }
 }
