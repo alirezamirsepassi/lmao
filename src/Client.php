@@ -85,7 +85,7 @@ class Client
     public function serveLoginPage()
     {
 
-        if (session('lmao_token') != null && session('lmao_secret') != null && session('lmao_status') == Status::HAS_ACCESSTOKEN) {
+        if (session('lmao_token') != null && session('lmao_secret') != null && session('lmao_status') == Status::LOGGED_IN) {
             // We are already logged in!
             exit;
         }
