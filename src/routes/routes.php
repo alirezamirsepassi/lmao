@@ -49,7 +49,9 @@ Route::get('/lmao/refused', function() {
     echo "<h1>The server has refused our request...</h1>";
     echo "<p>Please make sure your account has access</p>";
 
-    echo "<a href='/lmao/initiate'><button>Return</button></a>";
+    echo "<a href='/lmao/initiate'><button>Try again</button></a>";
+    echo "&nbsp;&nbsp;";
+    echo "<a href='/'><button>Return to home</button></a>";
 
 });
 
