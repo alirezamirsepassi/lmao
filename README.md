@@ -80,13 +80,9 @@ If you want to use these, link to these routes:
 
 #### Refused Callback URL
 
-In your Magento webshop admin panel:
-
-`/lmao/refused`
+In your Magento webshop admin panel: `/lmao/refused`
 
 
 #### Logout
 
-In your html
-
-`/lmao/logout`
+In your html `/lmao/logout`
