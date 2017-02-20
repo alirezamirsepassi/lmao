@@ -12,7 +12,7 @@ Also: I never need to do this twice, just pull the package using composer, creat
 
 ### Installation
 ```
-composer require "topster21/lmao"
+composer require "topster21/lmao" dev-master
 ```
 
 Also: add these in your **config/app.php**
