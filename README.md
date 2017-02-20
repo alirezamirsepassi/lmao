@@ -12,7 +12,7 @@ Also: I never need to do this twice, just pull the package using composer, creat
 
 ### Installation
 ```
-composer require "topster21/lmao"
+composer require "topster21/lmao" dev-master
 ```
 
 Also: add these in your **config/app.php**
@@ -33,10 +33,10 @@ This is best used with Laravel Middleware, which is what it was designed for in 
 
 Make sure these values are present in your .env file:
 ```
-LMAO_KEY=           (Set this in your Magento admin panel)
-LMAO_SECRET=        (Set this in your Magento admin panel)
-LMAO_URL=           (NO TRAILING /)
-LMAO_ADMIN_SLUG=    (Optional, when your /admin/ slug is different, set it here. NO / in this)
+LMAO_KEY=           (Consumer Key. Set this in your Magento admin panel)
+LMAO_SECRET=        (Consumer Secret. Set this in your Magento admin panel)
+LMAO_URL=           (This is your webshop URL. NO TRAILING /)
+LMAO_ADMIN_SLUG=    (Optional, when your /admin/ slug is different, set it here. NO / in this. Ex: beheer)
 ```
 
 The application stores values in the session. You can get them by using the following keys:
