@@ -63,7 +63,5 @@ Route::get('/lmao/logout', function () {
     session()->forget('lmao_token');
     session()->forget('lmao_secret');
 
-    return redirect('/');
-
-
+    header("Refresh: 4; url=/");
 })->middleware('web');
