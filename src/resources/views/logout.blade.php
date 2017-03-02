@@ -16,6 +16,6 @@
 @section('page-title', 'Logout')
 
 @section('page-content')
-<meta http-equiv="refresh" content="3;URL='/'">
+<meta http-equiv="refresh" content="2;URL='/'">
 <h3>Logging you out...</h3>
     @endsection
