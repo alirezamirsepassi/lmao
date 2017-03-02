@@ -46,22 +46,13 @@ Route::get('/lmao/refused', function() {
     session()->forget('lmao_token');
     session()->forget('lmao_secret');
 
-    echo "<h1>The server has refused our request...</h1>";
-    echo "<p>Please make sure your account has access</p>";
-
-    echo "<a href='/lmao/initiate'><button>Try again</button></a>";
-    echo "&nbsp;&nbsp;";
-    echo "<a href='/'><button>Return to home</button></a>";
-
+    return view('lmao::refused');
 });
 
 Route::get('/lmao/logout', function () {
-
-    echo "Logging you out...";
-
     session()->put('lmao_status', Status::LOGGED_OUT);
     session()->forget('lmao_token');
     session()->forget('lmao_secret');
 
-    header("Refresh: 4; url=/");
+    return view('lmao::logout');
 })->middleware('web');
