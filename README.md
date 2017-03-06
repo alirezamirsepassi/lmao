@@ -33,10 +33,11 @@ This is best used with Laravel Middleware, which is what it was designed for in 
 
 Make sure these values are present in your .env file:
 ```
-LMAO_KEY=           (Consumer Key. Set this in your Magento admin panel)
-LMAO_SECRET=        (Consumer Secret. Set this in your Magento admin panel)
-LMAO_URL=           (This is your webshop URL. NO TRAILING /)
-LMAO_ADMIN_SLUG=    (Optional, when your /admin/ slug is different, set it here. NO / in this. Ex: beheer)
+LMAO_KEY=               (Consumer Key. Set this in your Magento admin panel)
+LMAO_SECRET=            (Consumer Secret. Set this in your Magento admin panel)
+LMAO_URL=               (This is your webshop URL. NO TRAILING /)
+LMAO_ADMIN_SLUG=        (Optional, when your /admin/ slug is different, set it here. NO / in this.)
+LMAO_AFTER_LOGIN_URL=   (Optional, where should your application go after login? default '/')
 ```
 
 The application stores values in the session. You can get them by using the following keys:
