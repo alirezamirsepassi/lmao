@@ -37,7 +37,7 @@ Route::get('/lmao/callback', function () {
 
     session(['lmao_status' => Status::LOGGED_IN]);
 
-    return redirect()->intended('defaultpage');
+    return redirect()->intended('LMAO_AFTER_LOGIN_URL', '/');
 
 })->middleware('web');
 
