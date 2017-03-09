@@ -35,7 +35,7 @@ Make sure these values are present in your .env file:
 ```
 LMAO_KEY=               (Consumer Key. Set this in your Magento admin panel)
 LMAO_SECRET=            (Consumer Secret. Set this in your Magento admin panel)
-LMAO_URL=               (This is your webshop URL. NO TRAILING /)
+LMAO_URL=               (This is your webshop URL. NO TRAILING /. If you have a storefront, include this. (shop.com/nl)
 LMAO_ADMIN_SLUG=        (Optional, when your /admin/ slug is different, set it here. NO / in this.)
 LMAO_AFTER_LOGIN_URL=   (Optional, where should your application go after login? default '/')
 ```
