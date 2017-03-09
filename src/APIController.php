@@ -17,7 +17,7 @@
 namespace Topster21\LMAO;
 
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 
 /**
  * Class MagentoOAuthController
@@ -38,9 +38,9 @@ class APIController
      * MagentoOAuthController constructor.
      *
      * Takes values from the .env file
-     * @param \Topster21\LMAO\Client $lmaoClient
+     * @param \Topster21\LMAO\LMAOClient $lmaoClient
      */
-    public function __construct(\Topster21\LMAO\Client $lmaoClient)
+    public function __construct(\Topster21\LMAO\LMAOClient $lmaoClient)
     {
         $this->client = $lmaoClient;
     }
@@ -98,7 +98,7 @@ class APIController
     private function makeAPICall(string $method, string $requestUrl, array $extraParams = [], string $requestUrlParams = "")
     {
 
-        $client = new Client();
+        $client = new GuzzleClient();
 
         $headers = $this->getHeaders($method, $requestUrl, $extraParams);
 

@@ -12,11 +12,11 @@
  */
 
 use Illuminate\Support\Facades\Input;
-use Topster21\LMAO\Client;
+use Topster21\LMAO\LMAOClient;
 use Topster21\LMAO\Status;
 
 Route::get('/lmao/initiate', function () {
-    $client = new Client();
+    $client = new LMAOClient();
 
     $oauth_data = $client->serveLoginPage();
 
@@ -27,7 +27,7 @@ Route::get('/lmao/initiate', function () {
 
 
 Route::get('/lmao/callback', function () {
-    $client = new Client();
+    $client = new LMAOClient();
 
     $oauth_token = Input::get('oauth_token');
     $oauth_verifier = Input::get('oauth_verifier');
