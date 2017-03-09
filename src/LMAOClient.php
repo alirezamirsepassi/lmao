@@ -17,7 +17,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\URL;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
 
-class Client
+class LMAOClient
 {
 
     /*

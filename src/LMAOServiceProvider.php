@@ -35,7 +35,7 @@ class LMAOServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('topster21-lmaoclient', function() {
-            return new Client();
+            return new LMAOClient();
         });
     }
 }
