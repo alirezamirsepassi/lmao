@@ -1,5 +1,6 @@
 # lmao
 Laravel Magento Admin OAuth package
+### MAGENTO 1
 
 ## What is this even?
 This is my Laravel package. 
